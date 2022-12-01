@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello World!</h1>
+<p>Welcome to my first Django project,kudos!</p>
+<img src="{% static 'logo2.png' %}" alt="not found">
+<table border="1">
+    {% for x in mymembers %}
+    <tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.firstname }}</td>
+    <td>{{ x.lastname }}</td>
+    <td><a href="update/{{ x.id }}">update</a></td>
+    <td><a href="delete/{{ x.id }}">delete</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+
+<p>
+    <a href="add/">Add member</a>
+</p>
+
+</body>
+</html>
